@@ -78,7 +78,7 @@ const Carousel = ({ category }: { category: Category }) => {
                 </div>
                 <h2 className='font-extrabold text-2xl ml-auto text-end'>{category.title}</h2>
             </div>
-            <div className="relative min-w-full flex items-center justify-center" dir="rtl" ref={emblaRef}>
+            <div className="relative w-full flex items-center justify-center" dir="rtl" ref={emblaRef}>
                 <div className="flex items-start gap-2" dir="rtl">
                     {category.videos?.map((movie) => {
                     return (
@@ -93,7 +93,7 @@ const Carousel = ({ category }: { category: Category }) => {
                     );
                     })}
                 </div>
-                <button onClick={scrollNext} onMouseEnter={startAutoplay} onMouseLeave={stopAutoplay} className={`absolute inset-y-0 left-4 text-5xl place-items-center text-white hidden ${'group-hover:grid'}`}><IoIosArrowBack/></button>
+                <button onClick={scrollNext} onMouseEnter={startAutoplay} onMouseLeave={stopAutoplay} className={`absolute inset-y-0 left-4 text-5xl place-items-center text-white hidden group-hover:grid`}><IoIosArrowBack/></button>
                 <button onClick={scrollPrev} className={`absolute inset-y-0 right-4 text-5xl place-items-center text-white hidden ${selectedIndex !== 0 && 'group-hover:grid'}`}><IoIosArrowForward/></button>
             </div>
         </section>
